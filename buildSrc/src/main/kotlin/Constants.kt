@@ -1,6 +1,6 @@
 // Library version
 object Fuel {
-    const val publishVersion = "1.16.0"
+    const val publishVersion = "1.16.1"
     const val groupId = "com.github.bb441db.Fuel"
 
     const val compileSdkVersion = 27

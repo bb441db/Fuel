@@ -1,9 +1,11 @@
 pluginManagement {
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
         jcenter()
         maven(url = "https://plugins.gradle.org/m2/")
+        maven(url = "https://jitpack.io/")
     }
     resolutionStrategy {
         eachPlugin {
