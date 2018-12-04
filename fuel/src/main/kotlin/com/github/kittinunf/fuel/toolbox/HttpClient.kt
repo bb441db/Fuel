@@ -19,6 +19,7 @@ import java.io.IOException
 import java.io.InputStream
 import java.lang.ref.WeakReference
 import java.net.HttpURLConnection
+import java.net.ProtocolException
 import java.net.Proxy
 import java.net.URLConnection
 import javax.net.ssl.HttpsURLConnection
@@ -83,7 +84,7 @@ internal class HttpClient(
             } catch (ex: NoSuchFieldException) {
                 // ignore
             }
-            (this.javaClass.getSuperclasses() + this.javaClass).forEach {
+            (listOf(this.javaClass.superclass, this.javaClass)).forEach {
                 try {
                     it.getDeclaredField("method").apply { this.isAccessible = true }.set(this, method)
                 } catch (ex: NoSuchFieldException) {
